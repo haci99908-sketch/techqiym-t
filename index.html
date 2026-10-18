@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechQiymət — Noutbuk müqayisəsi</title>
+<style>
+:root{--navy:#101a2b;--blue:#2563eb;--pale:#eff6ff;--text:#182230;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{background:var(--navy);color:#fff;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:24px;letter-spacing:-.5px}.logo span{color:#60a5fa}
+nav a{color:#dbeafe;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{background:linear-gradient(135deg,#111c30,#1d4ed8);color:white;padding:46px 5% 42px}
+.hero h1{font-size:clamp(28px,5vw,46px);margin:0 0 12px;max-width:700px}.hero p{color:#dbeafe;line-height:1.6;max-width:650px;margin:0 0 22px}
+.search{display:flex;gap:8px;max-width:700px}.search input{flex:1;min-width:0;padding:14px;border:0;border-radius:10px;font-size:15px}.search button,.primary{border:0;background:#60a5fa;color:#0b1730;font-weight:700;padding:13px 18px;border-radius:10px;cursor:pointer}
+main{max-width:1200px;margin:auto;padding:28px 5% 55px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}.sectionhead h2{margin:0 0 7px;font-size:25px}.muted{color:var(--muted);font-size:14px}
+.filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
+.filters label{font-size:12px;color:var(--muted);display:block;margin-bottom:6px}.filters input,.filters select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:white;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 4px 18px #0f172a08}
+.laptop-art{height:145px;background:linear-gradient(135deg,#eaf2ff,#f8fafc);display:flex;align-items:center;justify-content:center}
+.laptop{width:150px;height:90px;position:relative;display:flex;align-items:center;justify-content:center}
+.screen{width:126px;height:78px;border:5px solid #26364d;border-radius:7px;background:linear-gradient(135deg,#172554,#3b82f6);box-shadow:inset 0 0 0 2px #94a3b8}
+.screen:after{content:"TQ";color:#bfdbfe;font-weight:800;font-size:27px;display:flex;height:100%;align-items:center;justify-content:center}
+.base{position:absolute;width:150px;height:8px;background:#94a3b8;bottom:0;clip-path:polygon(8% 0,92% 0,100% 100%,0 100%);border-radius:0 0 5px 5px}
+.cardbody{padding:16px}.brand{font-size:11px;color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.7px}.card h3{font-size:18px;margin:7px 0 10px}.price{font-size:24px;font-weight:800;margin:8px 0 12px}.specs{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0}.spec{background:#f8fafc;border-radius:9px;padding:10px}.spec small{display:block;color:var(--muted);font-size:11px;margin-bottom:4px}.spec b{font-size:13px}.actions{display:flex;gap:8px;align-items:center;margin-top:14px}.actions button{flex:1;border:1px solid #bfdbfe;background:var(--pale);color:#1d4ed8;padding:10px;border-radius:9px;font-weight:700;cursor:pointer}.actions button.selected{background:#1d4ed8;color:white}.note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:10px}
+.compare{display:none;background:#fff;border:1px solid var(--line);padding:18px;border-radius:14px;margin:22px 0;overflow-x:auto}.compare.show{display:block}.compare table{border-collapse:collapse;width:100%;min-width:450px}.compare th,.compare td{text-align:left;padding:10px;border-bottom:1px solid var(--line);font-size:14px}.compare th{background:#f8fafc}
+.empty{grid-column:1/-1;text-align:center;background:#fff;border:1px dashed #cbd5e1;padding:32px;border-radius:14px;color:var(--muted)}
+footer{background:#0b1220;color:#cbd5e1;padding:25px 5%;font-size:13px;line-height:1.6}footer strong{color:white}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filters{grid-template-columns:repeat(2,minmax(0,1fr))}nav a{margin-left:8px}}
+@media(max-width:520px){header{align-items:flex-start}nav{width:100%}nav a{margin:0 12px 0 0}.hero{padding-top:34px}.search{flex-direction:column}.grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.sectionhead h2{font-size:22px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Tech<span>Qiymət</span></div>
+  <nav><a href="#noutbuklar">Noutbuklar</a><a href="#müqayisə">Müqayisə</a><a href="#haqqinda">Haqqımızda</a></nav>
+</header>
+<section class="hero">
+  <h1>Sənə uyğun noutbuku tap.</h1>
+  <p>Qiymətləri və texniki göstəriciləri müqayisə et. Oyun, dərs və proqramlaşdırma üçün seçim et.</p>
+  <div class="search"><input id="search" placeholder="Məsələn: ASUS, Lenovo, oyun..." aria-label="Noutbuk axtarışı"><button onclick="render()">Axtar</button></div>
+</section>
+<main id="noutbuklar">
+  <div class="sectionhead"><div><h2>Noutbuk kataloqu</h2><div class="muted">Nümunə məlumatlar — real mağaza qiymətləri deyil.</div></div><div class="muted" id="count"></div></div>
+  <div class="filters">
+    <div><label for="maxprice">Maksimum qiymət (AZN)</label><input id="maxprice" type="number" min="0" placeholder="Məsələn: 2000" oninput="render()"></div>
+    <div><label for="ram">RAM</label><select id="ram" onchange="render()"><option value="">Hamısı</option><option value="8">8 GB</option><option value="16">16 GB</option><option value="32">32 GB</option></select></div>
+    <div><label for="purpose">İstifadə məqsədi</label><select id="purpose" onchange="render()"><option value="">Hamısı</option><option value="daily">Dərs və gündəlik</option><option value="work">Proqramlaşdırma</option><option value="gaming">Oyun</option></select></div>
+    <div><label for="sort">Sıralama</label><select id="sort" onchange="render()"><option value="default">Tövsiyə edilən</option><option value="cheap">Əvvəl ucuz</option><option value="expensive">Əvvəl baha</option><option value="ram">RAM-a görə</option></select></div>
+  </div>
+  <div id="cards" class="grid"></div>
+  <section id="müqayisə" class="compare"><h2>Müqayisə cədvəli</h2><p class="muted">Müqayisə üçün iki noutbuk seç.</p><div id="table"></div></section>
+</main>
+<footer id="haqqinda"><strong>TechQiymət</strong> — noutbuk seçimini asanlaşdıran layihə.<br>Qeyd: Hazırkı versiyada məhsullar və qiymətlər yalnız nümayiş üçündür. Alış qərarından əvvəl istehsalçı və mağaza məlumatlarını yoxla.</footer>
+<script>
+const laptops=[
+{id:1,brand:"ASUS",name:"VivoBook 15",price:1199,cpu:"Ryzen 5",ram:16,storage:"512 GB SSD",battery:"Təxmini 6–8 saat",purpose:["daily","work"],desc:"Dərs, gündəlik iş və başlanğıc proqramlaşdırma üçün nümunə."},
+{id:2,brand:"Lenovo",name:"IdeaPad Slim 5",price:1599,cpu:"Core i5",ram:16,storage:"512 GB SSD",battery:"Təxmini 7–10 saat",purpose:["daily","work"],desc:"Daşınma və gündəlik məhsuldarlıq üçün nümunə."},
+{id:3,brand:"Acer",name:"Nitro 5",price:1899,cpu:"Core i5 H-series",ram:16,storage:"512 GB SSD",battery:"Oyun zamanı qısa",purpose:["work","gaming"],desc:"Ayrıca videokartlı konfiqurasiya olduqda oyun üçün uyğun ola bilər."},
+{id:4,brand:"HP",name:"15s",price:999,cpu:"Ryzen 3",ram:8,storage:"256 GB SSD",battery:"Təxmini 5–7 saat",purpose:["daily"],desc:"Sadə gündəlik istifadə üçün büdcə nümunəsi."},
+{id:5,brand:"ASUS",name:"TUF Gaming A15",price:1999,cpu:"Ryzen 7",ram:16,storage:"512 GB SSD",battery:"İstifadədən asılıdır",purpose:["work","gaming"],desc:"Oyun üçün nəzərdə tutulan seriyadan nümunə."},
+{id:6,brand:"Lenovo",name:"LOQ 15",price:1949,cpu:"Core i5 H-series",ram:32,storage:"1 TB SSD",battery:"Oyun zamanı qısa",purpose:["work","gaming"],desc:"Oyun və ağır işlər üçün uyğun konfiqurasiyadan nümunə."}
+];
+const purposeNames={daily:"Dərs və gündəlik",work:"Proqramlaşdırma",gaming:"Oyun"};
+let chosen=[];
+function render(){
+ let q=document.getElementById('search').value.trim().toLowerCase();
+ let max=parseFloat(document.getElementById('maxprice').value);
+ let ram=document.getElementById('ram').value;
+ let purpose=document.getElementById('purpose').value;
+ let sort=document.getElementById('sort').value;
+ let list=laptops.filter(x=>(!q||(x.brand+" "+x.name+" "+x.cpu).toLowerCase().includes(q))&&(!Number.isFinite(max)||x.price<=max)&&(!ram||x.ram>=Number(ram))&&(!purpose||x.purpose.includes(purpose)));
+ if(sort==="cheap")list.sort((a,b)=>a.price-b.price);if(sort==="expensive")list.sort((a,b)=>b.price-a.price);if(sort==="ram")list.sort((a,b)=>b.ram-a.ram);
+ document.getElementById('count').textContent=list.length+" nəticə";
+ document.getElementById('cards').innerHTML=list.length?list.map(x=>`<article class="card"><div class="laptop-art"><div class="laptop"><div class="screen"></div><div class="base"></div></div></div><div class="cardbody"><div class="brand">${x.brand}</div><h3>${x.name}</h3><div class="price">${x.price.toLocaleString('en-US')} AZN</div><div class="specs"><div class="spec"><small>Prosessor</small><b>${x.cpu}</b></div><div class="spec"><small>RAM</small><b>${x.ram} GB</b></div><div class="spec"><small>Yaddaş</small><b>${x.storage}</b></div><div class="spec"><small>Batareya</small><b>${x.battery}</b></div></div><div class="muted">${x.purpose.map(p=>purposeNames[p]).join(" • ")}</div><p class="note">${x.desc}</p><div class="actions"><button class="${chosen.includes(x.id)?'selected':''}" onclick="toggleCompare(${x.id})">${chosen.includes(x.id)?"✓ Seçilib":"Müqayisəyə əlavə et"}</button></div></div></article>`).join(""):'<div class="empty">Uyğun noutbuk tapılmadı. Filtrləri dəyiş.</div>';
+}
+function toggleCompare(id){
+ if(chosen.includes(id))chosen=chosen.filter(x=>x!==id);else if(chosen.length<3)chosen.push(id);else {alert("Ən çox 3 noutbuku müqayisə edə bilərsən.");return}
+ updateCompare();render();
+}
+function updateCompare(){
+ const sec=document.getElementById('müqayisə');const items=laptops.filter(x=>chosen.includes(x.id));
+ sec.classList.toggle('show',items.length>0);
+ if(!items.length){document.getElementById('table').innerHTML="";return}
+ const rows=[["Qiymət",x=>x.price.toLocaleString('en-US')+" AZN"],["Prosessor",x=>x.cpu],["RAM",x=>x.ram+" GB"],["Yaddaş",x=>x.storage],["Batareya",x=>x.battery],["İstifadə",x=>x.purpose.map(p=>purposeNames[p]).join(", ")]];
+ document.getElementById('table').innerHTML='<table><thead><tr><th>Göstərici</th>'+items.map(x=>'<th>'+x.brand+' '+x.name+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr><th>'+r[0]+'</th>'+items.map(x=>'<td>'+r[1](x)+'</td>').join('')+'</tr>').join('')+'</tbody></table><p class="note">Müqayisə nümunə məlumatlarla aparılır. Dəqiq model kodu və real qiymətləri ayrıca yoxla.</p>';
+}
+render();
+</script>
+</body>
+</html>
